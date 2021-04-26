@@ -3,7 +3,7 @@ if !(has("win64") || has("win32") || has("win16"))
     " call system("Typora.exe \"" . expand("%") . "\"")
     let l:files = expand("%")
     let l:files = substitute(l:files, "/mnt/c/", "", "")
-    echo("Typora.exe " . l:files. "")
+    call system("Typora.exe " . l:files. "> ~/vim.log &")
     setlocal autoread
   endfunction
 
